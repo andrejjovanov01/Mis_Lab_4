@@ -28,11 +28,13 @@ class ExamListScreen extends StatelessWidget {
     },
   ];
 
+  const ExamListScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Available Exams'),
+        title: const Text('Available Exams'),
       ),
       body: ListView.builder(
         itemCount: exams.length,
@@ -44,7 +46,7 @@ class ExamListScreen extends StatelessWidget {
               subtitle: Text(
                   '${exam['date']} at ${exam['location']}'),
               trailing: IconButton(
-                icon: Icon(Icons.add),
+                icon: const Icon(Icons.add),
                 onPressed: () {
                   Navigator.pop(context, {
                     'date': exam['date'],
